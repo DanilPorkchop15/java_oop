@@ -58,7 +58,7 @@ public class Main {
 
         ArrayList<Inventory> inventoryArrayList = new ArrayList<Inventory>(Arrays.asList(item1, item2, item3, item4, item5));
 
-        University RKSI = new University("RKSI", "Тургеневская 10/6", "Владимир Путин", "e314wk1-3123-r1243", inventoryArrayList, students, employees, schedule);
+        University RKSI = new University("RKSI", "Тургеневская 10/6", "ООО Победа", "e314wk1-3123-r1243", inventoryArrayList, students, employees, schedule);
 
         RKSI.printStudentsWithScholarship();
         RKSI.printEmployeeById(200005);

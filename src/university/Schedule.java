@@ -38,6 +38,7 @@ public class Schedule implements IPrintable {
     }
     @Override
     public void print() {
-        System.out.println(toString());
+        System.out.println(this.getDate());
+        System.out.println(this.getInformation());
     }
 }
