@@ -1,12 +1,19 @@
-public class Employee extends Person{
+package personType;
+
+import abstractClass.Person;
+
+import javax.swing.plaf.IconUIResource;
+
+public class Employee extends Person {
 
     private String specialization;
     private String experience;
     private int salary;
-    protected static int employee_id;
+    private final int employee_id;
+    private static int counter;
 
     static{
-        employee_id = 100000;
+        counter = 200001;
     }
 
     public Employee(String name, String surname, int age, String specialization, String experience, int salary) {
@@ -14,6 +21,7 @@ public class Employee extends Person{
         this.specialization = specialization;
         this.experience = experience;
         this.salary = salary;
+        employee_id = counter++;
     }
 
     public String getSpecialization() {
@@ -56,15 +64,26 @@ public class Employee extends Person{
 
     @Override
     public void print() {
-
+        System.out.println("Name: " + this.getName() + "\nSurname: " + this.getSurname() + "\nAge: " + this.getAge() + "\nSpecialization: " + this.specialization + "\nExperience: " + this.experience + "\nSalary: " + this.salary + "\nID:" + this.getEmployee_id());
     }
 
     @Override
     public String toString() {
-        return "Employee{" +
+        return "humans.Employee{" +
                 "specialization='" + specialization + '\'' +
                 ", experience='" + experience + '\'' +
                 ", salary=" + salary +
                 '}';
     }
+
+    public int getEmployee_id() {
+        return employee_id;
+    }
+
+    public void remark(Student s){
+        System.out.println("Сотрудник " + this.getName() + "сделал зачемание студенту" + s.getName());
+    }
+
+
 }
+

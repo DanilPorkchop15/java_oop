@@ -1,6 +1,10 @@
+package university;
+
+import interfaces.IPrintable;
+
 import java.util.Date;
 
-public class Schedule implements IPrintable{
+public class Schedule implements IPrintable {
     private String information;
     private Date date;
 
@@ -27,13 +31,13 @@ public class Schedule implements IPrintable{
 
     @Override
     public String toString() {
-        return "Schedule{" +
+        return "university.Schedule{" +
                 "information='" + information + '\'' +
                 ", date=" + date +
                 '}';
     }
     @Override
     public void print() {
-
+        System.out.println(toString());
     }
 }

@@ -1,6 +1,8 @@
-import java.util.Date;
+package abstractClass;
 
-public abstract class Building implements IPrintable{
+import interfaces.IPrintable;
+
+public abstract class Building implements IPrintable {
     private String name;
     private String address;
     private String customer;

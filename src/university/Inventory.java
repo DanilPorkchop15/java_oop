@@ -1,3 +1,7 @@
+package university;
+
+import interfaces.IPrintable;
+
 public class Inventory implements IPrintable {
     private String name;
     private int count;
@@ -23,15 +27,15 @@ public class Inventory implements IPrintable {
     }
 
     @Override
-    public void print() {
-        System.out.println();
-    }
-
-    @Override
     public String toString() {
-        return "Inventory{" +
+        return "university.Inventory{" +
                 "name='" + name + '\'' +
                 ", count=" + count +
                 '}';
+    }
+
+    @Override
+    public void print() {
+        System.out.println(this.toString());
     }
 }

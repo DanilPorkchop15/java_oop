@@ -1,7 +1,13 @@
-public abstract class Person implements IHumanActions, IPrintable{
+package abstractClass;
+
+import interfaces.IHumanActions;
+import interfaces.IPrintable;
+
+public abstract class Person implements IHumanActions, IPrintable {
     private String name;
     private String surname;
     private int age;
+
 
     public Person(String name, String surname, int age) {
         this.name = name;
@@ -32,4 +38,14 @@ public abstract class Person implements IHumanActions, IPrintable{
     public void setAge(int age) {
         this.age = age;
     }
+
+    @Override
+    public String toString() {
+        return "Person{" +
+                "name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                '}';
+    }
+
 }

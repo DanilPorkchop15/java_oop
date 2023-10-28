@@ -1,17 +1,25 @@
+package personType;
+
+import abstractClass.Person;
+
 public class Student extends Person {
     private int group;
     private String specialization;
     private boolean social_scholarship;
-    protected  static int student_id;
-    static{
-        student_id = 200000;
+    private final int student_id;
+    private static int counter;
+
+    static {
+        counter = 100001;
     }
+
 
     public Student(String name, String surname, int age, int group, String specialization, boolean social_scholarship) {
         super(name, surname, age);
         this.group = group;
         this.specialization = specialization;
         this.social_scholarship = social_scholarship;
+        student_id = counter++;
     }
 
     public int getGroup() {
@@ -39,6 +47,15 @@ public class Student extends Person {
     }
 
     @Override
+    public String toString() {
+        return "humans.Student{" +
+                "group=" + group +
+                ", specialization='" + specialization + '\'' +
+                ", social_scholarship=" + social_scholarship +
+                "} " + super.toString();
+    }
+
+    @Override
     public void activity() {
         System.out.println("Talking with friends.");
     }
@@ -55,6 +72,18 @@ public class Student extends Person {
 
     @Override
     public void print() {
+        System.out.println("Student ID: " + student_id);
+        System.out.println("Name: " + getName());
+        System.out.println("Surname: " + getSurname());
+        System.out.println("Age: " + getAge());
+        System.out.println("Group: " + group);
+        System.out.println("Specialization: " + specialization);
+        System.out.println("Social scholarship: " + social_scholarship);
+    }
 
+    public int getStudent_id() {
+        return student_id;
     }
 }
+
+
