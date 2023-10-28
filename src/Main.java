@@ -1,6 +1,8 @@
 import personType.Employee;
 import personType.Student;
+import university.Inventory;
 import university.Schedule;
+import university.University;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -48,9 +50,34 @@ public class Main {
         ArrayList<Student> students = new ArrayList<Student>(Arrays.asList(student1, student2, student3, student4, student5, student6, student7, student8, student9, student10));
         ArrayList<Employee> employees = new ArrayList<Employee>(Arrays.asList(employee1, employee2, employee3, employee4, employee5, employee6, employee7, employee8, employee9, employee10));
 
+        Inventory item1 = new Inventory("Компьютер", 100);
+        Inventory item2 = new Inventory("Мяч", 33);
+        Inventory item3 = new Inventory("Клавиатура", 100);
+        Inventory item4 = new Inventory("Компьютерная мышь", 100);
+        Inventory item5 = new Inventory("Доска", 50);
 
+        ArrayList<Inventory> inventoryArrayList = new ArrayList<Inventory>(Arrays.asList(item1, item2, item3, item4, item5));
 
+        University RKSI = new University("RKSI", "Тургеневская 10/6", "Владимир Путин", "e314wk1-3123-r1243", inventoryArrayList, students, employees, schedule);
 
+        RKSI.printStudentsWithScholarship();
+        RKSI.printEmployeeById(200005);
+        RKSI.printSpecialtiesWithStudents();
+        RKSI.printSpecialtiesWithEmployees();
+
+        employee5.remark(student1);
+        System.out.println();
+        employee4.remark(students);
+
+        employee3.work();
+        employee5.rest();
+        employee6.activity();
+
+        student3.rest();
+        student2.activity();
+        student4.work();
+
+        RKSI.printSchedule();
 
     }
 }

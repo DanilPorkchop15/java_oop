@@ -3,6 +3,7 @@ package personType;
 import abstractClass.Person;
 
 import javax.swing.plaf.IconUIResource;
+import java.util.ArrayList;
 
 public class Employee extends Person {
 
@@ -81,7 +82,13 @@ public class Employee extends Person {
     }
 
     public void remark(Student s){
-        System.out.println("Сотрудник " + this.getName() + "сделал зачемание студенту" + s.getName());
+        System.out.println("Сотрудник " + this.getName() + " " + this.getSurname() + " сделал зачемание студенту: " + s.getName() + " " + s.getSurname());
+    }
+
+    public void remark(ArrayList<Student> s){
+        for(Student i: s){
+            System.out.println("Сотрудник " + this.getName() + " " + this.getSurname() + " сделал зачемание студенту: " + i.getName() + " " + i.getSurname());
+        }
     }
 
 

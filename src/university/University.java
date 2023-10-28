@@ -168,4 +168,8 @@ public final class University extends Building {
         }
         System.out.println("Работник с id " + id + " не найден");
     }
+    public void printSchedule(){
+        System.out.println(schedule.getDate());
+        System.out.println(schedule.getInformation());
+    }
 }
