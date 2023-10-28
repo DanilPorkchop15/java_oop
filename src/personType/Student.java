@@ -57,21 +57,22 @@ public class Student extends Person {
 
     @Override
     public void activity() {
-        System.out.println("Talking with friends.");
+        System.out.println(this.getName() + "Talking with friends.");
     }
 
     @Override
     public void work() {
-        System.out.println("Studying...");
+        System.out.println(this.getName() + "Studying...");
     }
 
     @Override
     public void rest() {
-        System.out.println("Scrolling TikToks.");
+        System.out.println(this.getName() + "Scrolling TikToks.");
     }
 
     @Override
     public void print() {
+        System.out.println("-----------------------------------------");
         System.out.println("Student ID: " + student_id);
         System.out.println("Name: " + getName());
         System.out.println("Surname: " + getSurname());
@@ -79,6 +80,7 @@ public class Student extends Person {
         System.out.println("Group: " + group);
         System.out.println("Specialization: " + specialization);
         System.out.println("Social scholarship: " + social_scholarship);
+        System.out.println("-----------------------------------------");
     }
 
     public int getStudent_id() {

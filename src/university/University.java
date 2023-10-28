@@ -1,7 +1,6 @@
 package university;
 
 import abstractClass.Building;
-import interfaces.IHumanActions;
 import personType.Employee;
 import personType.Student;
 

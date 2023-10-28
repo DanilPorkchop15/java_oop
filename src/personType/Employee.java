@@ -2,7 +2,6 @@ package personType;
 
 import abstractClass.Person;
 
-import javax.swing.plaf.IconUIResource;
 import java.util.ArrayList;
 
 public class Employee extends Person {
@@ -50,22 +49,30 @@ public class Employee extends Person {
     }
     @Override
     public void activity() {
-        System.out.println("Talking with colleagues.");
+        System.out.println(this.getName() + "Talking with colleagues.");
     }
 
     @Override
     public void work() {
-        System.out.println("Teaching...");
+        System.out.println(this.getName() + "Teaching...");
     }
 
     @Override
     public void rest() {
-        System.out.println("Drinking coffee.");
+        System.out.println(this.getName() + "Drinking coffee.");
     }
 
     @Override
     public void print() {
-        System.out.println("Name: " + this.getName() + "\nSurname: " + this.getSurname() + "\nAge: " + this.getAge() + "\nSpecialization: " + this.specialization + "\nExperience: " + this.experience + "\nSalary: " + this.salary + "\nID:" + this.getEmployee_id());
+        System.out.println("-----------------------------------------");
+        System.out.println("Name: " + this.getName() +
+                "\nSurname: " + this.getSurname() +
+                "\nAge: " + this.getAge() +
+                "\nSpecialization: " + this.specialization +
+                "\nExperience: " + this.experience +
+                "\nSalary: " + this.salary +
+                "\nID:" + this.getEmployee_id());
+        System.out.println("-----------------------------------------");
     }
 
     @Override
@@ -82,15 +89,26 @@ public class Employee extends Person {
     }
 
     public void remark(Student s){
-        System.out.println("Сотрудник " + this.getName() + " " + this.getSurname() + " сделал зачемание студенту: " + s.getName() + " " + s.getSurname());
+        System.out.println("Сотрудник " +
+                this.getName() + " " +
+                this.getSurname() +
+                " сделал зачемание студенту: " +
+                s.getName() + " " + s.getSurname());
     }
 
     public void remark(ArrayList<Student> s){
         for(Student i: s){
-            System.out.println("Сотрудник " + this.getName() + " " + this.getSurname() + " сделал зачемание студенту: " + i.getName() + " " + i.getSurname());
+            System.out.println("Сотрудник " +
+                    this.getName() + " " +
+                    this.getSurname() +
+                    " сделал зачемание студенту: " +
+                    i.getName() + " " + i.getSurname());
         }
     }
 
+    public void promotion(){
+        this.salary += 20000;
+    }
 
 }
 

@@ -8,10 +8,6 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Date;
 
-//Вариант 3
-//        Создайте структуру классов, которые могли бы использоваться в работе университета. В
-//        университете должны храниться списки инвентаря, сотрудников, учеников, информация о
-//        расписании и т.д.
 public class Main {
     public static void main(String[] args) {
         Employee employee1 = new Employee("Иван", "Иванов", 30, "Преподаватель", "5 лет", 100000);
@@ -36,16 +32,7 @@ public class Main {
         Student student9 = new Student("Николай", "Иванов", 19, 1, "Математика", false);
         Student student10 = new Student("Елена", "Козлова", 20, 3, "Физика", true);
 
-        student1.print();
-        employee5.print();
-        System.out.println();
-        System.out.println(student2);
-
-
-
-        Schedule schedule = new Schedule("8:00 - 9:30 \n9:40 - 11:10 \n8:00 - 9:30 \n8:00 - 9:30 \n", new Date());
-
-        schedule.print();
+        Schedule schedule = new Schedule("8:00 - 9:30 \n9:40 - 11:10 \n11:30 - 13:00 \n13:10 - 14:40 \n", new Date());
 
         ArrayList<Student> students = new ArrayList<Student>(Arrays.asList(student1, student2, student3, student4, student5, student6, student7, student8, student9, student10));
         ArrayList<Employee> employees = new ArrayList<Employee>(Arrays.asList(employee1, employee2, employee3, employee4, employee5, employee6, employee7, employee8, employee9, employee10));
@@ -60,24 +47,35 @@ public class Main {
 
         University RKSI = new University("RKSI", "Тургеневская 10/6", "ООО Победа", "e314wk1-3123-r1243", inventoryArrayList, students, employees, schedule);
 
-        RKSI.printStudentsWithScholarship();
-        RKSI.printEmployeeById(200005);
-        RKSI.printSpecialtiesWithStudents();
-        RKSI.printSpecialtiesWithEmployees();
-
-        employee5.remark(student1);
-        System.out.println();
-        employee4.remark(students);
-
-        employee3.work();
-        employee5.rest();
-        employee6.activity();
+        for (Student s :
+                students) {
+            s.print();
+        }
 
         student3.rest();
         student2.activity();
         student4.work();
+        for (Employee e :
+                employees) {
+            e.print();
+        }
 
+        employee2.rest();
+        employee5.activity();
+        employee6.work();
+        employee5.remark(student1);
+        employee4.remark(students);
+
+        System.out.println(RKSI);
+        RKSI.print();
+        RKSI.printStudentsWithScholarship();
+        RKSI.printEmployeeById(200005);
+        RKSI.printSpecialtiesWithStudents();
+        RKSI.printSpecialtiesWithEmployees();
         RKSI.printSchedule();
+        RKSI.countList();
+        RKSI.addStudent(new Student("Егор", "Погром", 33, 2, "Программист", true));
+        RKSI.removeEmployee(employee2);
 
     }
 }
